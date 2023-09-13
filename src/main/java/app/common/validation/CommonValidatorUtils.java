@@ -1,7 +1,7 @@
 package app.common.validation;
 
-import app.exception.FieldNotUniqueException;
-import app.exception.MissingRequiredFieldException;
+import app.common.exception.FieldNotUniqueException;
+import app.common.exception.MissingRequiredFieldException;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.stereotype.Component;
 
