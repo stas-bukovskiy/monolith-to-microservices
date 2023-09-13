@@ -3,7 +3,7 @@ package app.stock.repo;
 import app.common.search.PageSearchResult;
 import app.common.search.QueryExecutor;
 import app.common.utils.SearchUtils;
-import app.model.QStock;
+import app.stock.model.QStock;
 import app.stock.model.Stock;
 import app.stock.search.StockSearchCriteria;
 import com.querydsl.core.BooleanBuilder;
