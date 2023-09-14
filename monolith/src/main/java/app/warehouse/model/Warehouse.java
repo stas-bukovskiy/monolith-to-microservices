@@ -1,6 +1,5 @@
 package app.warehouse.model;
 
-import app.stock.model.Shelf;
 import lombok.Data;
 
 import javax.persistence.*;

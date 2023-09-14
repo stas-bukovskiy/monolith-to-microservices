@@ -1,7 +1,6 @@
 package app.warehouse.dto;
 
-import app.stock.dto.ShelfDto;
-import app.stock.model.Shelf;
+import app.warehouse.model.Shelf;
 import app.warehouse.model.Warehouse;
 import lombok.Data;
 import lombok.NoArgsConstructor;
