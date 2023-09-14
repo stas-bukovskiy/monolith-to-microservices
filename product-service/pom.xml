@@ -60,12 +60,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Migration tool Flyway -->
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-        </dependency>
-
         <!-- Swagger -->
         <dependency>
             <groupId>io.springfox</groupId>

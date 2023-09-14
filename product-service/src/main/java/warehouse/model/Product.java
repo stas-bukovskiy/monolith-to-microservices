@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "product")
+@Table(name = "p_product")
 @Getter
 @Setter
 @ToString
