@@ -3,7 +3,6 @@ package warehouse.common.validation;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.stereotype.Component;
 import warehouse.common.exception.FieldNotUniqueException;
-import warehouse.common.exception.MissingRequiredFieldException;
 
 /**
  * Component about some most used validation utilities. Implementation is based on
@@ -41,11 +40,6 @@ public class CommonValidatorUtils<T, S> {
                 throw new FieldNotUniqueException(checkingObjFieldValue);
             }
         }
-    }
-
-    public void validateRequiredField(String fieldLabel, T fieldValue) {
-        if (fieldValue == null)
-            throw new MissingRequiredFieldException(fieldLabel);
     }
 
 }

@@ -1,13 +1,21 @@
 package warehouse.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.Hibernate;
 import warehouse.enums.MeasurementUnit;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "product")
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class Product {
 
     @Id
@@ -23,5 +31,18 @@ public class Product {
     @Enumerated(EnumType.STRING)
     @Column(name = "measurement_unit")
     private MeasurementUnit measurementUnit;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Product product = (Product) o;
+        return getId() != null && Objects.equals(getId(), product.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
 

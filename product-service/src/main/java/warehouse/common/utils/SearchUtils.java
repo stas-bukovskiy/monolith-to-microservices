@@ -1,12 +1,9 @@
 package warehouse.common.utils;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Path;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.*;
 import warehouse.common.search.BaseSearchCriteria;
 import warehouse.common.search.PageSearchResult;
@@ -17,9 +14,6 @@ import java.util.List;
 import java.util.Map;
 
 public class SearchUtils {
-
-    private static final Logger LOG = LoggerFactory.getLogger(SearchUtils.class);
-    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**
      * @param searchRequest       request object from outside
@@ -84,7 +78,7 @@ public class SearchUtils {
             }
         }
 
-        return new OrderSpecifier(orderDirection, orderPath);
+        return new OrderSpecifier<>(orderDirection, orderPath);
     }
 
 }

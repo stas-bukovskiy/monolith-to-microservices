@@ -19,12 +19,11 @@ public class ProductDtoValidator implements BaseValidator<ProductDto> {
     @Autowired
     public ProductDtoValidator(
             ProductRepository productRepository,
-            CommonValidatorUtils commonValidatorUtils) {
+            CommonValidatorUtils<ProductDto, Product> commonValidatorUtils) {
         this.productRepository = productRepository;
         this.commonValidatorUtils = commonValidatorUtils;
     }
 
-    @Override
     public void validate(ProductDto obj) {
         validateUniqueCode(obj);
     }

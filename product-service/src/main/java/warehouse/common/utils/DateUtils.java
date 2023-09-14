@@ -1,7 +1,6 @@
 package warehouse.common.utils;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -15,12 +14,4 @@ public class DateUtils {
         return LocalDateTime.ofInstant(instant, ZONE_ID);
     }
 
-    public static LocalDate localDateOf(Date date) {
-        return localDateTimeOf(date).toLocalDate();
-    }
-
-    public static Date plusDays(Date date, Integer days) {
-        LocalDate nextLocalDate = localDateOf(date).plusDays(days);
-        return Date.from(nextLocalDate.atStartOfDay(ZONE_ID).toInstant());
-    }
 }
