@@ -11,7 +11,9 @@
     <modules>
         <module>monolith</module>
         <module>product-service</module>
+        <module>clerk-service</module>
         <module>warehouse-service</module>
+        <module>transaction-service</module>
     </modules>
 
 </project>
