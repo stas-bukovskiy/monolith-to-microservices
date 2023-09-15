@@ -29,7 +29,7 @@ public class StockClerkServiceImpl implements StockClerkService {
     )
     public StockClerkDto findById(Long stockClerkId) {
         try {
-            return restTemplate.getForObject("{url}/{id}", StockClerkDto.class, url, stockClerkId);
+            return restTemplate.getForObject(url + "/{id}", StockClerkDto.class, stockClerkId);
         } catch (HttpClientErrorException.NotFound ex) {
             throw new ResourceNotFoundException(stockClerkId);
         } catch (HttpClientErrorException ex) {

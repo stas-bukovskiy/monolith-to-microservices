@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
     )
     public ProductDto findById(Long id) {
         try {
-            return restTemplate.getForObject("{url}/{id}", ProductDto.class, url, id);
+            return restTemplate.getForObject(url + "/{id}", ProductDto.class, id);
         } catch (HttpClientErrorException.NotFound ex) {
             throw new ResourceNotFoundException(id);
         } catch (HttpClientErrorException ex) {

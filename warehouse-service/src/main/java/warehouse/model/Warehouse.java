@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "warehouse")
+@Table(name = "w_warehouse")
 @Entity
 @Data
 public class Warehouse {

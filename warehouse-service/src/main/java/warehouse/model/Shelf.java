@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Table(name = "shelf")
+@Table(name = "w_shelf")
 @Entity
 @Data
 public class Shelf {

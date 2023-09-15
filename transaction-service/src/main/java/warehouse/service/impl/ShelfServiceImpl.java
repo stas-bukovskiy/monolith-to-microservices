@@ -31,7 +31,7 @@ public class ShelfServiceImpl implements ShelfService {
     )
     public ShelfDto findById(Long shelfId) {
         try {
-            return restTemplate.getForObject("{url}/{id}", ShelfDto.class, url, shelfId);
+            return restTemplate.getForObject(url + "/{id}", ShelfDto.class, shelfId);
         } catch (HttpClientErrorException.NotFound ex) {
             throw new ResourceNotFoundException(shelfId);
         } catch (HttpClientErrorException ex) {
