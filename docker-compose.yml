@@ -1,6 +1,45 @@
 version: '3.3'
 
 services:
+  clerk-service:
+    container_name: clerk-service
+    build:
+      context: ./clerk-service/
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+
+  product-service:
+    container_name: product-service
+    build:
+      context: ./product-service/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  warehouse-service:
+    container_name: warehouse-service
+    build:
+      context: ./warehouse-service/
+    ports:
+      - "8002:8002"
+    depends_on:
+      - db
+
+  transaction-service:
+    container_name: transaction-service
+    build:
+      context: ./transaction-service/
+    ports:
+      - "8003:8003"
+    depends_on:
+      - db
+      - clerk-service
+      - product-service
+      - warehouse-service
+
   db:
     container_name: warehouse_db
     image: mysql:5.7
